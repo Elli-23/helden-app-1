@@ -6,27 +6,28 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0;
 }
 
 h1 {
   font-weight: normal;
-  font-size: 6vw;
-  margin-top: 10rem;
-  margin-bottom: 7rem;
-
+  font-size: max(28px, 3vw);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   color: black;
   background-color: white;
-  width: 60%;
+  width: 50%;
   border-radius: 30px;
 }
 
 a {
   color: white;
   text-decoration: none;
-  font-size: 4vw;
-  margin-top: 100px;
+  font-size: 2vw;
+  margin-top: 60px;
+  margin-bottom: 30px;
   background-color: #152a48;
-  padding: 15px 40px;
+  padding: 15px 20px;
   border-radius: 30px;
   border: 2px solid white;
 }
@@ -52,6 +53,8 @@ label {
   list-style-type: none;
   font-size: 6vw;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .input_name {
@@ -60,17 +63,52 @@ label {
   font-size: 20px;
 }
 
-.submit_button {
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  padding: 10px;
-  background-color: #152a48;
-  border-radius: 30px;
-  border: 2px solid white;
-  cursor: pointer;
+.slogan {
+  font-size: 48px;
 }
 
-.submit_button:hover {
-  background-color: rgb(184, 46, 46);
+.beschreibung {
+  font-size: 20px;
+}
+
+.button {
+  padding: 40px;
+}
+
+.naruto-bild {
+  border-radius: 200px;
+  border: 5px solid white;
+  opacity: 0.5;
+}
+
+.container {
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+}
+
+.flex-left {
+  width: 100%;
+  display: flex;
+  align-items: start;
+}
+
+@media (min-width: 800px) {
+  .grid-2 {
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .back-button p {
+    font-size: 30px;
+  }
 }

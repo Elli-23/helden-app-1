@@ -7,7 +7,7 @@ app = Flask(__name__)
 name = 'Naruto'
 
 # Daten aus db/helden.json laden
-with open('db/helden.json', encoding='utf-8') as f:
+with open('helden-app/db/helden.json', encoding='utf-8') as f:
     helden = json.load(f)
 
 # Route definieren
@@ -28,6 +28,20 @@ def neu():
     else:
         # Die Methode ist GET
         return render_template('neuer_name.html')
+    
+# Route definieren
+@app.route('/held')
+def held():
+    name = request.args.get('name')
+
+    if not name or name.capitalize() not in helden:
+        # name nicht in Dictionary vorhanden oder
+        # kein Name als Request-Parameter: Zurück zur Startseite
+        return redirect('/')
+
+    name = name.capitalize()
+
+    return render_template('held.html', name=name, held=helden[name])
 
 # App starten
 app.run(debug=True)
