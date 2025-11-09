@@ -7,7 +7,7 @@ app = Flask(__name__)
 name = 'Naruto'
 
 # Daten aus db/helden.json laden
-with open('helden-app/db/helden.json', encoding='utf-8') as f:
+with open('helden-app-1/db/helden.json', encoding='utf-8') as f:
     helden = json.load(f)
 
 # Route definieren
